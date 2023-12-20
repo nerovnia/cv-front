@@ -25,6 +25,11 @@ const router = createRouter({
       component: () => import('../views/EducationView.vue')
     },
     {
+      path: '/technologies',
+      name: 'Technologies',
+      component: () => import('../views/forms/dict/Technologies.vue')
+    },
+    {
       path: '/languages',
       name: 'Languages',
       component: () => import('../views/LanguagesView.vue')
