@@ -1,4 +1,14 @@
-<script setup>
+<script>
+import Checkbox from "../components/form/Checkbox.vue";
+export default {
+  components: {
+    //Checkbox
+  },
+  data() {
+    return {
+    }
+  }
+}
 </script>
 
 <template>
@@ -8,7 +18,7 @@
     <input type="text" id="position"  placeholder="Position">
     <input type="text" id="address"  placeholder="Address">
     <input type="text" id="email"  placeholder="Email">
-    <input type="text" id="phone" placeholder="Phone">
+    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="phone" placeholder="Phone">
     <div>
       <label for="scales">Social networks</label>
       <div>
@@ -18,6 +28,7 @@
           Linkedin
         </label>
       </div>
+      <Checkbox />
       <div>
         <input class="checkbox" type="checkbox" id="facebook" name="facebook" checked />
         <label for="facebook">Facebook</label>
@@ -27,7 +38,10 @@
         <label for="github">Github</label>
       </div>
     </div>
-    <input class="submit" type="submit" value="Submit">
+    <div class="btn_block">
+      <input class="submit" type="button" value="Preview">
+      <input class="submit" type="submit" value="Save">
+    </div>
   </form>
 </template>
 
@@ -52,69 +66,9 @@ form input.submit {
   padding: 5px;
 }
 
-
-
-.container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 14px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+.btn_block {
+  display: flex;
+  flex-shrink: 1;
 }
 
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 20px;
-  width: 20px;
-  background-color: #dafdd8;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #98d690;
-}
-
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: #bcfdc7;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid rgb(4, 116, 0);
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
 </style>
