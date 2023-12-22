@@ -3,14 +3,18 @@ import TextInput from "../components/form/Inputs/TextInput.vue";
 import PhoneInput from "../components/form/Inputs/PhoneInput.vue";
 import EmailInput from "../components/form/Inputs/EmailInput.vue";
 import CheckboxList from "../components/form/CheckboxList.vue";
+import SocialNetworksBlock from "@/components/form/SocialNetworksBlock.vue";
+import Button from "@/components/Button.vue";
 
 export default {
   components: {
     TextInput,
     PhoneInput,
     EmailInput,
-    CheckboxList
-  },
+    CheckboxList,
+    SocialNetworksBlock,
+    Button,
+},
   data() {
     return {
       fname: {
@@ -45,6 +49,18 @@ export default {
           { id: 2, text: 'Facebook'},
           { id: 3, text: 'Github'},
         ]
+      },
+      buttons: {
+        preview: {
+          class: "submit",
+          type: "button",
+          value: "Preview",
+        },
+        save: {
+          class: "submit",
+          type: "submit",
+          value: "Save",
+        },
       }
     }
   }
@@ -59,6 +75,9 @@ export default {
     <TextInput :inpId="address.id" :inpPlaceholder="address.placeholder"/>
     <EmailInput :inpId="email.id" :inpPlaceholder="email.placeholder"/>
     <PhoneInput :inpId="phone.id" :inpPlaceholder="phone.placeholder" :inpPattern="phone.pattern"/>
+    <SocialNetworksBlock />
+
+
     <div>
       <label for="scales">Social networks</label>
       <checkbox-list 
@@ -66,8 +85,8 @@ export default {
       />
     </div>
     <div class="btn_block">
-      <input class="submit" type="button" value="Preview">
-      <input class="submit" type="submit" value="Save">
+      <Button :btnProps="buttons.preview" />
+      <Button :btnProps="buttons.save" />
     </div>
   </form>
 </template>
@@ -81,13 +100,6 @@ form {
 form input {
   padding: 5px;
   margin: 10px;
-}
-
-form input.submit {
-  color: rgb(4, 116, 0);
-  background-color: #bcfdc7;
-  border: 1px solid rgb(4, 116, 0);
-  padding: 5px;
 }
 
 .btn_block {
