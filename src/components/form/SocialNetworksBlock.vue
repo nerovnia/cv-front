@@ -1,21 +1,10 @@
 <template>
   <div class="flex flex-column">
-
-    <div class="wrapper">
-      <div class="one">One</div>
-      <div class="two">Two</div>
-      <div class="three">Three</div>
-
-      <div class="one">One</div>
-      <div class="two">Two</div>
-      <div class="three">Three</div>
-    </div>
-
-
-
-
-    <div v-for="item in inpUrls">
-      <UrlInput :inpId="item.id" :inpPlaceholder="item.placeholder"/>
+    <div class="wrapper" v-for="item in inpUrls">
+      <div><img src="" alt="Social networks logo"></div>
+      <div><UrlInput :inpId="item.id" :inpPlaceholder="item.placeholder"/></div>
+      <div><Button :btnProps="buttons.delete" @click="delInpUrl" /></div>
+      
     </div>
     <div>
       <Button :btnProps="buttons.add" @click="addInpUrl" />
@@ -42,7 +31,7 @@ export default {
       add: {
         class: "submit",
         type: "button",
-        value: "Add",
+        value: "Add link to social network",
       },
       delete: {
         class: "submit",
