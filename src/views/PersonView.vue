@@ -4,6 +4,7 @@ import PhoneInput from "../components/form/Inputs/PhoneInput.vue";
 import EmailInput from "../components/form/Inputs/EmailInput.vue";
 import CheckboxList from "../components/form/CheckboxList.vue";
 import SocialNetworksBlock from "@/components/form/SocialNetworksBlock.vue";
+import TechnologiesView from "@/views/forms/dict/Technologies.vue";
 import Button from "@/components/Button.vue";
 
 export default {
@@ -13,6 +14,7 @@ export default {
     EmailInput,
     CheckboxList,
     SocialNetworksBlock,
+    TechnologiesView,
     Button,
 },
   data() {
@@ -84,6 +86,9 @@ export default {
         :itemList="socnetworks.list" :display="socnetworks.view"
       />
     </div>
+    <TechnologiesView />
+
+
     <div class="btn_block">
       <Button :btnProps="buttons.preview" />
       <Button :btnProps="buttons.save" />
