@@ -109,16 +109,15 @@ meter {
 }
 
 @font-face {
-  font-family: myFirstFont;
-  src: url(sansation_light.woff);
+  font-family: 'Arial';
+  src: url('../font/Arial.ttf') format('truetype');
+  /* You can specify other font formats here, such as woff or woff2 */
 }
-
 
 body {
   /*font-family: 'Ubuntu Mono', monospace;*/
-  font-family: 'Titillium Web', sans-serif;
-
-
+  /*font-family: 'Titillium Web', sans-serif;*/
+  font-family: 'Arial', sans-serif;
 }
 
 .container {
@@ -145,7 +144,7 @@ body {
   width: 210mm;
   height: 297mm;
   margin: 20mm;
-  padding: 10mm 10mm 10mm 25mm;
+  padding: 5mm 5mm 5mm 20mm;
   font-size: 12px;
   border: 1px dotted black;
   display: flex;
@@ -159,6 +158,9 @@ header {
   align-items: center;
 }
 
+main {
+  margin: 5mm;
+}
 .applicant-name {
   font-family: 'Kanit', sans-serif;
   font-weight: 600;
@@ -177,11 +179,12 @@ header {
 }
 
 .applicant-position {
-  font-family: 'Ubuntu Mono', monospace;
+  /*font-family: 'Titillium Web', sans-serif;*/
+  /*font-family: 'Ubuntu Mono', monospace;*/
   font-size: 20px;
   width: 100%;
   height:20mm;
-  padding-top: 13mm;;
+  padding-top: 12mm;;
   color: var(--applicant-position-color);
   background-color: var(--header-bg-dark-color);
   text-align: center;
@@ -215,4 +218,38 @@ header {
 
 .applicant-requisites li {
   margin-right: 10px; 
+}
+
+.left-col-header {
+  font-weight: 700;
+}
+
+.category-container {
+  margin-top: 2mm;
+  display: flex;
+  flex-direction: row;
+}
+
+.left-col-header {
+  flex: 0 0 100px;
+}
+
+.right-col-body {
+  text-align: justify;
+}
+
+.edu-company {
+  display: flex;
+  flex-direction: column;
+}
+
+.company-name {
+  font-weight: 700;
+}
+.education-row {
+  display: flex;
+}
+
+.date-end {
+  flex: 0 0 130px;
 }
