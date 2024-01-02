@@ -253,3 +253,12 @@ main {
 .date-end {
   flex: 0 0 130px;
 }
+
+.languages-body ul{
+  display: flex;
+  flex-direction: row;
+}
+
+.languages-body li{
+  margin-left: 10px;
+}
