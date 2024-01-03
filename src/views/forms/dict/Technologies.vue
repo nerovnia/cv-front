@@ -1,5 +1,5 @@
 <template>
-  <h1>Technologies</h1>
+  <div>Technologies</div>
   <checkbox-list 
       :itemList="technologiesList" :display="view"
     />
